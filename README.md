@@ -5,7 +5,7 @@ Trying to make it easier for people to query the Habbo servers, this API is a wo
 For feature requests & ideas, contact me on discord: tdid#5193
 
 ### Installation
-Using .NET CLI: `dotnet add package HabboAPI`
+Using .NET CLI: `dotnet add package HabboAPI`  
 Or via Nuget https://www.nuget.org/packages/HabboAPI/
 
 ### Usage
