@@ -1,8 +1,7 @@
-﻿namespace HabboAPI.Groups
+﻿namespace HabboAPI.Groups;
+
+public class GroupMembership : Group
 {
-    public class GroupMembership : Group
-    {
-        public bool IsOnline { get; set; }
-        public bool IsAdmin { get; set; }
-    }
+    public bool IsOnline { get; set; }
+    public bool IsAdmin { get; set; }
 }

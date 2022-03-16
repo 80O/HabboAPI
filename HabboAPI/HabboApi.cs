@@ -11,42 +11,41 @@ using HabboAPI.Utils.JsonConverters;
 /// https://www.habbo.com/shopapi/public/countries
 /// https://www.habbo.com/shopapi/public/inventory/nl
 /// </summary>
-namespace HabboAPI
+namespace HabboAPI;
+
+public class HabboAPI
 {
-    public class HabboAPI
+    public Hotel Hotel { get; }
+    private HttpClient HttpClient { get; }
+    private readonly JsonSerializerOptions _jsonSerializerOptions = new()
     {
-        public Hotel Hotel { get; }
-        private HttpClient HttpClient { get; }
-        private readonly JsonSerializerOptions _jsonSerializerOptions = new()
+        WriteIndented = true,
+        Converters =
         {
-            WriteIndented = true,
-            Converters =
-            {
-                new UniqueUserIdConverter(),
-                new UniqueGroupIdConverter(),
-                new UniqueRoomIdConverter(),
-                new DateOnlyConverter(),
-                new DateTimeOffsetConverter(),
-                new GroupTypeEnumConverter(),
-                new DoorModeEnumConverter(),
-                new GenderEnumConverter()
-            },
-            PropertyNameCaseInsensitive = true,
-        };
+            new UniqueUserIdConverter(),
+            new UniqueGroupIdConverter(),
+            new UniqueRoomIdConverter(),
+            new DateOnlyConverter(),
+            new DateTimeOffsetConverter(),
+            new GroupTypeEnumConverter(),
+            new DoorModeEnumConverter(),
+            new GenderEnumConverter()
+        },
+        PropertyNameCaseInsensitive = true,
+    };
 
-        public HabboAPI(Hotel hotel)
-        {
-            Hotel = hotel;
-            HttpClient = new HttpClient();
-            HttpClient.DefaultRequestHeaders.UserAgent.Add(new("HabboAPI", "v1"));
-        }
+    public HabboAPI(Hotel hotel)
+    {
+        Hotel = hotel;
+        HttpClient = new HttpClient();
+        HttpClient.DefaultRequestHeaders.UserAgent.Add(new("HabboAPI", "v1"));
+    }
 
-        public Task<T?> Get<T>(string endpoint) => HttpClient.GetFromJsonAsync<T>($"https://{Hotel.Domain()}/{endpoint.TrimStart('/')}", _jsonSerializerOptions);
+    public Task<T?> Get<T>(string endpoint) => HttpClient.GetFromJsonAsync<T>($"https://{Hotel.Domain()}/{endpoint.TrimStart('/')}", _jsonSerializerOptions);
 
-        public async Task<XDocument> GetXml(string endpoint)
-        {
-            var reply = await HttpClient.GetStringAsync($"https://{Hotel.Domain()}/{endpoint.TrimStart('/')}");
-            return XDocument.Parse(reply);
-        }
+    public async Task<XDocument> GetXml(string endpoint)
+    {
+        var reply = await HttpClient.GetStringAsync($"https://{Hotel.Domain()}/{endpoint.TrimStart('/')}");
+        return XDocument.Parse(reply);
     }
 }

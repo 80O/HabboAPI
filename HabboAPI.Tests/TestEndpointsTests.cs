@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
-using HabboAPI.Utils;
 using HabboAPI.Utils.MiscEndpoints;
+using HabboAPI.Utils.MiscEndpoints.Info;
 using NUnit.Framework;
 
 namespace HabboAPI.Tests;

@@ -1,8 +1,8 @@
-using HabboAPI.Utils;
 using NUnit.Framework;
 using System.Linq;
 using System.Threading.Tasks;
 using HabboAPI.Utils.MiscEndpoints;
+using HabboAPI.Utils.MiscEndpoints.HotLooks;
 
 namespace HabboAPI.Tests;
 
