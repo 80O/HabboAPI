@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabboAPI", "HabboAPI\HabboAPI.csproj", "{7F7F329D-D614-44FE-9949-41701CC2245E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabboAPI.Tests", "HabboAPI.Tests\HabboAPI.Tests.csproj", "{09617D2E-830D-4FD2-8987-A83DCB0B5DA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F7F329D-D614-44FE-9949-41701CC2245E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7F329D-D614-44FE-9949-41701CC2245E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7F329D-D614-44FE-9949-41701CC2245E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7F329D-D614-44FE-9949-41701CC2245E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09617D2E-830D-4FD2-8987-A83DCB0B5DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09617D2E-830D-4FD2-8987-A83DCB0B5DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09617D2E-830D-4FD2-8987-A83DCB0B5DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09617D2E-830D-4FD2-8987-A83DCB0B5DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D18CCBD-4F33-4E6C-9F7E-46BD8491E710}
+	EndGlobalSection
+EndGlobal
