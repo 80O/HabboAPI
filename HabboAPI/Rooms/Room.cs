@@ -1,4 +1,5 @@
-﻿using HabboAPI.Users;
+﻿using HabboAPI.Groups;
+using HabboAPI.Users;
 
 namespace HabboAPI.Rooms;
 
@@ -7,6 +8,7 @@ public class Room
     public uint Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
+    public UniqueGroupId HabboGroupId { get; set; } = UniqueGroupId.Empty;
     public DateTimeOffset CreationTime { get; set; }
     public List<string> Tags { get; set; } = new(0);
     public uint MaximumVisitors { get; set; }
