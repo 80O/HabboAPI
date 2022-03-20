@@ -34,3 +34,5 @@ var fullProfile = await api.GetUserProfile(user.UniqueId);
   - Badges
 - Rooms
   - Rooms Per User
+- Furniture
+  - Furnidata
