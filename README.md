@@ -32,7 +32,11 @@ var fullProfile = await api.GetUserProfile(user.UniqueId);
   - Groups
   - Rooms
   - Badges
+  - Photos
 - Rooms
   - Rooms Per User
 - Furniture
   - Furnidata
+- Photos
+  - Last 200 Published Photos
+  - Photos Per User
