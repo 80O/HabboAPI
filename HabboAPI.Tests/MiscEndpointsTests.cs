@@ -2,9 +2,10 @@ using NUnit.Framework;
 using System.Linq;
 using System.Threading.Tasks;
 using HabboAPI.Furniture;
-using HabboAPI.Utils.MiscEndpoints;
+using HabboAPI.Users;
 using HabboAPI.Utils.MiscEndpoints.HotLooks;
 using HabboAPI.Utils.MiscEndpoints.Leaderboards;
+using HabboAPI.Utils.MiscEndpoints.Photos;
 
 namespace HabboAPI.Tests;
 
@@ -31,6 +32,21 @@ public class MiscEndpointsTests : BaseApiTests
     public async Task GetRoomVisitsLeaderboard()
     {
         var data = await _api.GetRoomVisitsLeaderBoard();
+        Assert.That(data, Is.Not.Null);
+    }
+
+    [Test]
+    public async Task GetPhotos()
+    {
+        var data = await _api.GetPhotos();
+        Assert.That(data, Is.Not.Null);
+    }
+
+    [Test]
+    public async Task GetUserPhotos()
+    {
+        var user = await _api.GetUser("Macklebee");
+        var data = await _api.GetUserPhotos(user.UniqueId);
         Assert.That(data, Is.Not.Null);
     }
 }

@@ -43,6 +43,16 @@ public class HabboAPI
 
     public Task<T?> Get<T>(string endpoint) => HttpClient.GetFromJsonAsync<T>($"https://{Hotel.Domain()}/{endpoint.TrimStart('/')}", _jsonSerializerOptions);
 
+    public Task<T?> GetFromUrl<T>(string url, string? globalCodeParameter = null, string? domainParameter = null)
+    {
+        if (globalCodeParameter != null)
+            url = url.Replace(globalCodeParameter, Hotel.GlobalCode());
+        if (domainParameter != null)
+            url = url.Replace(domainParameter, Hotel.Domain());
+
+        return HttpClient.GetFromJsonAsync<T>(url, _jsonSerializerOptions);
+    }
+
     public async Task<XDocument> GetXml(string endpoint)
     {
         var reply = await HttpClient.GetStringAsync($"https://{Hotel.Domain()}/{endpoint.TrimStart('/')}");
