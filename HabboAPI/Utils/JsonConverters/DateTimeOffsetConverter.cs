@@ -9,6 +9,9 @@ public class DateTimeOffsetConverter : JsonConverter<DateTimeOffset>
     public override DateTimeOffset Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         Debug.Assert(typeToConvert == typeof(DateTimeOffset));
+        if (reader.TryGetInt64(out var millis))
+            return new DateTimeOffset(DateTime.UnixEpoch.AddMilliseconds(millis));
+
         return DateTimeOffset.Parse(reader.GetString()!);
     }
 

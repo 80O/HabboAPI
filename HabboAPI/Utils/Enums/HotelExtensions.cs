@@ -9,4 +9,12 @@ public static class HotelExtensions
         Hotel.TR => "www.habbo.com.tr",
         _ => $"www.habbo.{hotel.ToString().ToLower()}"
     };
+
+    public static string GlobalCode(this Hotel hotel) =>
+        @$"hh{hotel switch
+        {
+            Hotel.COM => "us",
+            Hotel.SANDBOX => "s2",
+            _ => hotel.ToString().ToLower()
+        }}";
 }

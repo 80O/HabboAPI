@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using HabboAPI.Furniture;
 using HabboAPI.Utils.MiscEndpoints;
 using HabboAPI.Utils.MiscEndpoints.HotLooks;
+using HabboAPI.Utils.MiscEndpoints.Leaderboards;
 
 namespace HabboAPI.Tests;
 
@@ -23,6 +24,13 @@ public class MiscEndpointsTests : BaseApiTests
     public async Task GetFurniture()
     {
         var data = await _api.GetFurniData();
+        Assert.That(data, Is.Not.Null);
+    }
+
+    [Test]
+    public async Task GetRoomVisitsLeaderboard()
+    {
+        var data = await _api.GetRoomVisitsLeaderBoard();
         Assert.That(data, Is.Not.Null);
     }
 }
