@@ -4,13 +4,6 @@ using System.Xml.Linq;
 using HabboAPI.Utils.Enums;
 using HabboAPI.Utils.JsonConverters;
 
-/// <summary>
-/// TODO:
-/// https://images.habbo.com/habbo-web-leaderboards//hhus/visited-rooms/daily/latest.json
-/// https://www.habbo.com/extradata/public/photos
-/// https://www.habbo.com/shopapi/public/countries
-/// https://www.habbo.com/shopapi/public/inventory/nl
-/// </summary>
 namespace HabboAPI;
 
 public class HabboAPI
@@ -37,7 +30,7 @@ public class HabboAPI
     public HabboAPI(Hotel hotel)
     {
         Hotel = hotel;
-        HttpClient = new HttpClient();
+        HttpClient = new();
         HttpClient.DefaultRequestHeaders.UserAgent.Add(new("HabboAPI", "v1"));
     }
 
