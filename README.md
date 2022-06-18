@@ -40,3 +40,6 @@ var fullProfile = await api.GetUserProfile(user.UniqueId);
 - Photos
   - Last 200 Published Photos
   - Photos Per User
+- Shop
+  - Available countries
+  - Inventory
