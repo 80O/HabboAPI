@@ -8,10 +8,10 @@ namespace HabboAPI.Furniture
         {
             var xmlData = await api.GetXml("gamedata/furnidata_xml/0");
             var xmlSerializer = new XmlSerializer(typeof(FurniData));
-            using var textReader = xmlData.Root.CreateReader();
+            using var reader = xmlData.CreateReader();
             try
             {
-                var data = (FurniData)xmlSerializer.Deserialize(textReader);
+                var data = (FurniData)xmlSerializer.Deserialize(reader);
                 return data;
             }
             catch (Exception e)

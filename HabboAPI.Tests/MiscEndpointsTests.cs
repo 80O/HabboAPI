@@ -26,6 +26,9 @@ public class MiscEndpointsTests : BaseApiTests
     {
         var data = await _api.GetFurniData();
         Assert.That(data, Is.Not.Null);
+        Assert.That(data.FloorItems, Is.Not.Empty);
+        Assert.That(data.FloorItems.Any(f => f.ClassName.Equals("throne")));
+        Assert.That(data.WallItems, Is.Not.Empty);
     }
 
     [Test]
