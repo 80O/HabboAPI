@@ -11,18 +11,10 @@ public abstract class TypedUniqueId : UniqueId
     protected TypedUniqueId(string uniqueId) : base(uniqueId[(uniqueId.IndexOf('-') + 1)..])
     {
     }
-    public override string ToString()
-    {
-        return $"{Prefix}-{HotelId}-{Id}";
-    }
 
-    public override bool Equals(object? obj)
-    {
-        return obj is TypedUniqueId id && Equals(id);
-    }
+    public override string ToString() => $"{Prefix}-{HotelId}-{Id}";
 
-    public bool Equals(TypedUniqueId obj)
-    {
-        return Prefix.Equals(obj.Prefix) && base.Equals(obj);
-    }
+    public override bool Equals(object? obj) => obj is TypedUniqueId id && Equals(id);
+
+    public bool Equals(TypedUniqueId obj) => Prefix.Equals(obj.Prefix) && base.Equals(obj);
 }

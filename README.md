@@ -43,3 +43,4 @@ var fullProfile = await api.GetUserProfile(user.UniqueId);
 - Shop
   - Available countries
   - Inventory
+- Marketplace

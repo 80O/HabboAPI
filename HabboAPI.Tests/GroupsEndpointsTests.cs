@@ -13,7 +13,8 @@ public  class GroupsEndpointsTests : BaseApiTests
     [Test]
     public async Task GetGroup_ReturnsGroup()
     {
-        var groupId = new UniqueGroupId("g-hhus-f1be47c2cf33086c70d1c626feb0e6c9");
+        var user = (await _api.GetUser(Constants.Macklebee))!;
+        var groupId = (await _api.GetUserProfile(user.UniqueId)).Groups.First().Id;
         var group = (await _api.GetGroup(groupId))!;
 
         Assert.That(group, Is.Not.Null);
@@ -28,9 +29,8 @@ public  class GroupsEndpointsTests : BaseApiTests
     public async Task GetGroupMembers_ReturnsMembers()
     {
         var user = (await _api.GetUser(Constants.Macklebee))!;
-
-        var groupId = new UniqueGroupId("g-hhus-f1be47c2cf33086c70d1c626feb0e6c9");
-        var members = (await _api.GetGroupMembers(groupId))!;
+        var group = (await _api.GetUserProfile(user.UniqueId))!.Groups.First();
+        var members = (await _api.GetGroupMembers(group.Id))!;
 
         var macklebee = members.FirstOrDefault(m => m.Name.Equals(Constants.Macklebee));
         Assert.That(macklebee, Is.Not.Null);

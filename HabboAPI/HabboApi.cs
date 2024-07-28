@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Xml.Linq;
 using HabboAPI.Utils.Enums;
 using HabboAPI.Utils.JsonConverters;
@@ -25,6 +26,7 @@ public class HabboAPI
             new GenderEnumConverter()
         },
         PropertyNameCaseInsensitive = true,
+        NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.AllowNamedFloatingPointLiterals
     };
 
     public HabboAPI(Hotel hotel)
