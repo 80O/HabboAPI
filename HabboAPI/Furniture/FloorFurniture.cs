@@ -4,6 +4,9 @@ namespace HabboAPI.Furniture;
 
 public class FloorFurniture : Furniture
 {
+    [XmlElement("defaultdir")]
+    public uint DefaultDir { get; set; }
+
     [XmlElement("xdim")]
     public uint XDim { get; set; }
 

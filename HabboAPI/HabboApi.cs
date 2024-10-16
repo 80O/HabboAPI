@@ -2,6 +2,8 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Xml.Linq;
+using HabboAPI.Groups;
+using HabboAPI.Rooms;
 using HabboAPI.Utils.Enums;
 using HabboAPI.Utils.JsonConverters;
 
@@ -21,8 +23,8 @@ public class HabboAPI
             new UniqueRoomIdConverter(),
             new DateOnlyConverter(),
             new DateTimeOffsetConverter(),
-            new GroupTypeEnumConverter(),
-            new DoorModeEnumConverter(),
+            new JsonStringEnumConverter<GroupType>(),
+            new JsonStringEnumConverter<DoorMode>(),
             new GenderEnumConverter()
         },
         PropertyNameCaseInsensitive = true,

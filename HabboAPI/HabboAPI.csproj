@@ -11,7 +11,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/80O/HabboAPI</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.2.0</Version>
+		<Version>1.2.2</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

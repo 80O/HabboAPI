@@ -2,6 +2,7 @@
 
 namespace HabboAPI.Furniture;
 
+[XmlType("furnitype")]
 public class Furniture
 {
     [XmlAttribute("id")]

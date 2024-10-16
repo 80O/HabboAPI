@@ -11,7 +11,7 @@ public class Room
     public UniqueGroupId HabboGroupId { get; set; } = UniqueGroupId.Empty;
     public DateTimeOffset CreationTime { get; set; }
     public List<string> Tags { get; set; } = new(0);
-    public uint MaximumVisitors { get; set; }
+    public int MaximumVisitors { get; set; }
     public bool ShowOwnerName { get; set; }
     public string OwnerName { get; set; } = string.Empty;
     public UniqueUserId OwnerUniqueId { get; set; } = UniqueUserId.Empty;
