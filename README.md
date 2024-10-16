@@ -10,7 +10,7 @@ Or via Nuget https://www.nuget.org/packages/HabboAPI/
 
 ### Usage
 
-```
+```csharp
 var api = new HabboAPI(Hotel.COM);
 var user = await api.GetUser("Macklebee");
 var fullProfile = await api.GetUserProfile(user.UniqueId);
