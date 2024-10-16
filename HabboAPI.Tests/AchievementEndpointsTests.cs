@@ -36,7 +36,7 @@ public class AchievementEndpointsTests : BaseApiTests
     [Test]
     public async Task GetUserAchievements()
     {
-        var achievements = await _api.GetUserAchievements(await _api.GetUniqueUserId(Constants.Macklebee));
+        var achievements = await _api.GetUserAchievements(_uuid);
 
         Assert.That(achievements, Is.Not.Empty);
     }

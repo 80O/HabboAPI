@@ -30,7 +30,7 @@ public class UsersEndpointsTests : BaseApiTests
     [Test]
     public async Task GetUserProfile()
     {
-        var profile = (await _api.GetUserProfile(await _api.GetUniqueUserId(Constants.Macklebee)))!;
+        var profile = (await _api.GetUserProfile(_uuid))!;
 
         Assert.That(profile.User, Is.Not.Null);
         AssertIsMacklebee(profile.User);
@@ -41,10 +41,30 @@ public class UsersEndpointsTests : BaseApiTests
     }
 
     [Test]
+    public async Task GetUserRooms()
+    {
+        var rooms = await _api.GetUserRooms(_uuid);
+        Assert.That(rooms, Is.Not.Empty);
+    }
+
+    [Test]
+    public async Task GetUserFriends()
+    {
+        var friends = await _api.GetUserFriends(_uuid);
+        Assert.That(friends, Is.Not.Empty);
+    }
+
+    [Test]
+    public async Task GetUserBadges()
+    {
+        var badges = await _api.GetUserBadges(_uuid);
+        Assert.That(badges, Is.Not.Empty);
+    }
+
+    [Test]
     public async Task GetUserGroups()
     {
-        var uuid = await _api.GetUniqueUserId(Constants.Macklebee);
-        var groups = await _api.GetUserGroups(uuid);
+        var groups = await _api.GetUserGroups(_uuid);
         Assert.That(groups, Is.Not.Empty);
     }
 
