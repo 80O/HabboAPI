@@ -40,6 +40,14 @@ public class UsersEndpointsTests : BaseApiTests
         Assert.That(profile.Rooms, Is.Not.Empty);
     }
 
+    [Test]
+    public async Task GetUserGroups()
+    {
+        var uuid = await _api.GetUniqueUserId(Constants.Macklebee);
+        var groups = await _api.GetUserGroups(uuid);
+        Assert.That(groups, Is.Not.Empty);
+    }
+
     public void AssertIsMacklebee(User user)
     {
         Assert.That(user.Name, Is.EqualTo(Constants.Macklebee));

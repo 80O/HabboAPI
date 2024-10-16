@@ -11,5 +11,8 @@ public enum Hotel
     FR,
     ES,
     IT,
-    SANDBOX
+    SANDBOX,
+    ORIGINS_COM,
+    ORIGINS_ES,
+    ORIGINS_BR
 }
