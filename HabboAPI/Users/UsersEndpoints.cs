@@ -1,4 +1,5 @@
 ﻿using HabboAPI.Badges;
+using HabboAPI.Groups;
 using HabboAPI.Rooms;
 
 namespace HabboAPI.Users;
@@ -22,4 +23,6 @@ public static class UserEndpoints
     public static Task<List<Friend>?> GetUserFriends(this HabboAPI api, UniqueUserId uuid) => api.Get<List<Friend>>($"api/publicusers/{uuid}/friends");
 
     public static Task<List<Badge>?> GetUserBadges(this HabboAPI api, UniqueUserId uuid) => api.Get<List<Badge>>($"api/public/users/{uuid}/badges");
+
+    public static Task<List<Group>?> GetUserGroups(this HabboAPI api, UniqueUserId uuid) => api.Get<List<Group>>($"api/public/users/{uuid}/groups");
 }

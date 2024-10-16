@@ -10,6 +10,6 @@ public class BaseApiTests
     [SetUp]
     public void Setup()
     {
-        _api = new HabboAPI(Hotel.COM);
+        _api = new(Hotel.COM);
     }
 }
